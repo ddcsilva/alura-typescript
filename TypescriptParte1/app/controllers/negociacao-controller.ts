@@ -10,15 +10,15 @@ export class NegociacaoController {
     private inputValor: HTMLInputElement;
     private negociacoes = new Negociacoes();
     private negociacoesView = new NegociacoesView('#negociacoesView', true);
-    private mensagemView = new MensagemView('#mensagemView');
+    private mensagemView = new MensagemView('#mensagemView', false);
 
     private readonly SABADO = 6;
     private readonly DOMINGO = 0;
 
     constructor() {
-        this.inputData = document.querySelector('#data');
-        this.inputQuantidade = document.querySelector('#quantidade');
-        this.inputValor = document.querySelector('#valor');
+        this.inputData = document.querySelector('#data') as HTMLInputElement;
+        this.inputQuantidade = document.querySelector('#quantidade') as HTMLInputElement;
+        this.inputValor = document.querySelector('#valor') as HTMLInputElement;
         this.negociacoesView.update(this.negociacoes);
     }
 
